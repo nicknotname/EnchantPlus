@@ -4,6 +4,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.enchantments.Enchantment;
 
 import java.util.Arrays;
+import java.util.List;
 
 public enum PickaxeEnchantments {
     EFFICIENCY(ChatColor.GREEN + "Efficiency", Enchantment.DIG_SPEED,5, Arrays.asList("Increases Mining Speed")),
@@ -12,4 +13,8 @@ public enum PickaxeEnchantments {
     UNBREAKING(ChatColor.GREEN + "Unbreaking", Enchantment.DURABILITY,3,Arrays.asList("Increases your armor's durability"))
     MENDING(ChatColor.GREEN + "Mending", Enchantment.MENDING, 1, Arrays.asList("Mends items when you collect experience")),
 
+    private final String name;
+    private final Enchantment enchantment;
+    private final int maxLevel;
+    private final List<String> lore;
     }

@@ -5,6 +5,7 @@ import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 
 import java.util.Arrays;
+import java.util.List;
 
 public enum HelmetEnchantments {
     AQUA_AFFINITY(ChatColor.GREEN + "Aqua Affinity", Enchantment.WATER_WORKER,1, Arrays.asList("Makes Mining Underwater faster")),
@@ -19,19 +20,7 @@ public enum HelmetEnchantments {
 
     ;
 
-    private final Material material;
     private final String name;
-
-    HelmetEnchantments(Material material, String name){
-        this.material = material;
-        this.name = name;
-    }
-
-    public Material getMaterial(){
-        return material;
-    }
-
-    public String getName(){
-        return name;
-    }
-}
+    private final Enchantment enchantment;
+    private final int maxLevel;
+    private final List<String> lore;

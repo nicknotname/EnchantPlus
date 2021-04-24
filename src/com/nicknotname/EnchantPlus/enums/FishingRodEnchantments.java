@@ -4,11 +4,16 @@ import org.bukkit.ChatColor;
 import org.bukkit.enchantments.Enchantment;
 
 import java.util.Arrays;
+import java.util.List;
 
-public class FishingRodEnchantments {
+public enum FishingRodEnchantments {
     LUCK_OF_THE_SEA(ChatColor.GREEN + "Luck", Enchantment.LUCK,3,Arrays.asList("Makes treasure more likely to be fished up")),
     LURE(ChatColor.GREEN + "Lure", Enchantment.LURE,3,Arrays.asList("Makes catching an item quicker")),
     UNBREAKING(ChatColor.GREEN + "Unbreaking", Enchantment.DURABILITY,3,Arrays.asList("Increases your armor's durability"))
     MENDING(ChatColor.GREEN + "Mending", Enchantment.MENDING, 1, Arrays.asList("Mends items when you collect experience")),
 
+    private final String name;
+    private final Enchantment enchantment;
+    private final int maxLevel;
+    private final List<String> lore;
 }

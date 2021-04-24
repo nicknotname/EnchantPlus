@@ -4,8 +4,9 @@ import org.bukkit.ChatColor;
 import org.bukkit.enchantments.Enchantment;
 
 import java.util.Arrays;
+import java.util.List;
 
-public class BowEnchantments {
+public enum BowEnchantments {
     FLAME(ChatColor.GREEN + "Flame", Enchantment.ARROW_FIRE,1, Arrays.asList("Makes your bow shoot flaming arrows")),
     INFINITY(ChatColor.GREEN + "Infinity", Enchantment.ARROW_INFINITE,1,Arrays.asList("Makes your bow only need one arrow")),
     POWER(ChatColor.GREEN + "Power", Enchantment.ARROW_DAMAGE,5,Arrays.asList("Makes Bows stronger")),
@@ -13,4 +14,8 @@ public class BowEnchantments {
     UNBREAKING(ChatColor.GREEN + "Unbreaking", Enchantment.DURABILITY,3,Arrays.asList("Increases your armor's durability")),
     MENDING(ChatColor.GREEN + "Mending", Enchantment.MENDING, 1, Arrays.asList("Mends items when you collect experience")),
 
+    private final String name;
+    private final Enchantment enchantment;
+    private final int maxLevel;
+    private final List<String> lore;
 }

@@ -4,8 +4,9 @@ import org.bukkit.ChatColor;
 import org.bukkit.enchantments.Enchantment;
 
 import java.util.Arrays;
+import java.util.List;
 
-public class SwordEnchantments {
+public enum  SwordEnchantments {
     BANE_OF_ARTHROPODS(ChatColor.GREEN + "Bane Of Arthropods", Enchantment.DAMAGE_ARTHROPODS,5,Arrays.asList("Increases damage to spiders, bees, silverfish and endermites")),
     FIRE_ASPECT(ChatColor.GREEN + "Fire Aspect", Enchantment.FIRE_ASPECT,2, Arrays.asList("Sets mobs on fire when they are hit")),
     KNOCKBACK(ChatColor.GREEN + "Knockback", Enchantment.KNOCKBACK,2,Arrays.asList("Knocks Mobs back on hit")),
@@ -17,4 +18,8 @@ public class SwordEnchantments {
     UNBREAKING(ChatColor.GREEN + "Unbreaking", Enchantment.DURABILITY,3,Arrays.asList("Increases your armor's durability"))
     MENDING(ChatColor.GREEN + "Mending", Enchantment.MENDING, 1, Arrays.asList("Mends items when you collect experience")),
 
+    private final String name;
+    private final Enchantment enchantment;
+    private final int maxLevel;
+    private final List<String> lore;
 }
