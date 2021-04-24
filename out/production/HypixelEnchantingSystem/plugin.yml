@@ -1,0 +1,9 @@
+name: EnchantPlus
+version: 0.1.0
+author: Nicknotname
+main: com.nicknotname.EnchantPlus.enchantplus
+api-version: 1.16
+commands:
+  invtest:
+    usage: /invtest
+    description: Inventory Test

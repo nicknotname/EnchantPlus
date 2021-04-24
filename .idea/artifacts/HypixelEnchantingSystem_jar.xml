@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="HypixelEnchantingSystem:jar">
+    <output-path>$PROJECT_DIR$/../TestServer/plugins</output-path>
+    <root id="archive" name="HypixelEnchantingSystem.jar">
+      <element id="module-output" name="HypixelEnchantingSystem" />
+    </root>
+  </artifact>
+</component>
