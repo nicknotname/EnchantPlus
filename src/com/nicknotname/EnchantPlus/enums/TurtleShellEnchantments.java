@@ -8,7 +8,7 @@ import java.util.List;
 
 public enum TurtleShellEnchantments {
     AQUA_AFFINITY(ChatColor.GREEN + "Aqua Affinity", Enchantment.WATER_WORKER,1, Arrays.asList("Makes Mining Underwater faster")),
-    UNBREAKING(ChatColor.GREEN + "Unbreaking", Enchantment.DURABILITY,3,Arrays.asList("Increases your armor's durability"))
+    UNBREAKING(ChatColor.GREEN + "Unbreaking", Enchantment.DURABILITY,3,Arrays.asList("Increases your armor's durability")),
     MENDING(ChatColor.GREEN + "Mending", Enchantment.MENDING, 1, Arrays.asList("Mends items when you collect experience")),
 
     ;
@@ -16,5 +16,12 @@ public enum TurtleShellEnchantments {
     private final Enchantment enchantment;
     private final int maxLevel;
     private final List<String> lore;
+
+    TurtleShellEnchantments(String name, Enchantment enchantment,int maxLevel,List<String> lore){
+        this.name = name;
+        this.enchantment = enchantment;
+        this.maxLevel = maxLevel;
+        this.lore = lore;
+    }
 
     }

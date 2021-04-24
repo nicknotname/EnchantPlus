@@ -21,4 +21,11 @@ public enum BootsEnchantments {
     private final Enchantment enchantment;
     private final int maxLevel;
     private final List<String> lore;
+
+    BootsEnchantments(String name, Enchantment enchantment,int maxLevel,List<String> lore){
+        this.name = name;
+        this.enchantment = enchantment;
+        this.maxLevel = maxLevel;
+        this.lore = lore;
+    }
     }

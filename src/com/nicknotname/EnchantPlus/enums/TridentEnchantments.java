@@ -12,11 +12,20 @@ public enum TridentEnchantments {
     LOYALTY(ChatColor.GREEN + "Loyalty", Enchantment.LOYALTY,3,Arrays.asList("Makes the trident return when thrown")),
     RIPTIDE(ChatColor.GREEN + "Riptide", Enchantment.RIPTIDE,3,Arrays.asList("Shoot yourself when in water with a Trident")),
     SHARPNESS(ChatColor.GREEN + "Sharpness", Enchantment.DAMAGE_ALL,5,Arrays.asList("Increases Melee Damage")),
-    UNBREAKING(ChatColor.GREEN + "Unbreaking", Enchantment.DURABILITY,3,Arrays.asList("Increases your armor's durability"))
+    UNBREAKING(ChatColor.GREEN + "Unbreaking", Enchantment.DURABILITY,3,Arrays.asList("Increases your armor's durability")),
     MENDING(ChatColor.GREEN + "Mending", Enchantment.MENDING, 1, Arrays.asList("Mends items when you collect experience")),
+
+    ;
 
     private final String name;
     private final Enchantment enchantment;
     private final int maxLevel;
     private final List<String> lore;
+
+    TridentEnchantments(String name, Enchantment enchantment,int maxLevel,List<String> lore){
+        this.name = name;
+        this.enchantment = enchantment;
+        this.maxLevel = maxLevel;
+        this.lore = lore;
+    }
 }
