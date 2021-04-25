@@ -29,4 +29,20 @@ public enum AxeEnchantments {
         this.maxLevel = maxLevel;
         this.lore = lore;
     }
+
+    public String getName() {
+        return name;
     }
+
+    public Enchantment getEnchantment() {
+        return enchantment;
+    }
+
+    public int getMaxLevel() {
+        return maxLevel;
+    }
+
+    public List<String> getLore() {
+        return lore;
+    }
+}
