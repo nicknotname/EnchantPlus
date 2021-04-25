@@ -11,6 +11,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.EnchantmentStorageMeta;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.Arrays;
@@ -22,7 +23,7 @@ public class EnchantInvItemInListener implements Listener {
     public ItemMeta unableEnchantMeta = unableEnchant.getItemMeta();
     public static String unableEnchantName = ChatColor.RED + "UNABLE TO ENCHANT THIS ITEM";
 
-    public ToolType isEnchantable(Material item){
+    public static ToolType isEnchantable(Material item){
 
         for(ToolType toolType: ToolType.values()){
             List<Material> toolList = toolType.getToolList();
@@ -53,9 +54,10 @@ public class EnchantInvItemInListener implements Listener {
                                 int invSlot = InvSlots.get(axeIndex);
 
                                 ItemStack axeEnchantmentBook = new ItemStack(Material.ENCHANTED_BOOK);
-                                ItemMeta axeEnchantmentBookMeta = axeEnchantmentBook.getItemMeta();
+                                EnchantmentStorageMeta axeEnchantmentBookMeta = (EnchantmentStorageMeta) axeEnchantmentBook.getItemMeta();
                                 axeEnchantmentBookMeta.setDisplayName(axeEnchantments.getName());
                                 axeEnchantmentBookMeta.setLore(axeEnchantments.getLore());
+                                axeEnchantmentBookMeta.addStoredEnchant(axeEnchantments.getEnchantment(),1,false);
                                 axeEnchantmentBook.setItemMeta(axeEnchantmentBookMeta);
 
                                 eventInventory.setItem(invSlot,axeEnchantmentBook);
@@ -71,9 +73,10 @@ public class EnchantInvItemInListener implements Listener {
                                 int invSlot = InvSlots.get(bootsIndex);
 
                                 ItemStack bootsEnchantmentBook = new ItemStack(Material.ENCHANTED_BOOK);
-                                ItemMeta bootsEnchantmentBookMeta = bootsEnchantmentBook.getItemMeta();
+                                EnchantmentStorageMeta bootsEnchantmentBookMeta = (EnchantmentStorageMeta) bootsEnchantmentBook.getItemMeta();
                                 bootsEnchantmentBookMeta.setDisplayName(bootsEnchantments.getName());
                                 bootsEnchantmentBookMeta.setLore(bootsEnchantmentBookMeta.getLore());
+                                bootsEnchantmentBookMeta.addStoredEnchant(bootsEnchantments.getEnchantment(),1,false);
                                 bootsEnchantmentBook.setItemMeta(bootsEnchantmentBookMeta);
 
                                 eventInventory.setItem(invSlot,bootsEnchantmentBook);
@@ -89,9 +92,10 @@ public class EnchantInvItemInListener implements Listener {
                                 int invSlot = InvSlots.get(bowIndex);
 
                                 ItemStack bowEnchantmentBook = new ItemStack(Material.ENCHANTED_BOOK);
-                                ItemMeta bowEnchantmentBookMeta = bowEnchantmentBook.getItemMeta();
+                                EnchantmentStorageMeta bowEnchantmentBookMeta = (EnchantmentStorageMeta) bowEnchantmentBook.getItemMeta();
                                 bowEnchantmentBookMeta.setDisplayName(bowEnchantments.getName());
                                 bowEnchantmentBookMeta.setLore(bowEnchantments.getLore());
+                                bowEnchantmentBookMeta.addStoredEnchant(bowEnchantments.getEnchantment(),1,false);
                                 bowEnchantmentBook.setItemMeta(bowEnchantmentBookMeta);
 
                                 eventInventory.setItem(invSlot,bowEnchantmentBook);
@@ -107,9 +111,10 @@ public class EnchantInvItemInListener implements Listener {
                                 int invSlot = InvSlots.get(chestplateIndex);
 
                                 ItemStack chestplateEnchantmentBook = new ItemStack(Material.ENCHANTED_BOOK);
-                                ItemMeta chestplateEnchantmentBookMeta = chestplateEnchantmentBook.getItemMeta();
+                                EnchantmentStorageMeta chestplateEnchantmentBookMeta = (EnchantmentStorageMeta) chestplateEnchantmentBook.getItemMeta();
                                 chestplateEnchantmentBookMeta.setDisplayName(chestplateEnchantments.getName());
                                 chestplateEnchantmentBookMeta.setLore(chestplateEnchantments.getLore());
+                                chestplateEnchantmentBookMeta.addStoredEnchant(chestplateEnchantments.getEnchantment(),1,false);
                                 chestplateEnchantmentBook.setItemMeta(chestplateEnchantmentBookMeta);
 
                                 eventInventory.setItem(invSlot,chestplateEnchantmentBook);
@@ -125,9 +130,10 @@ public class EnchantInvItemInListener implements Listener {
                                 int invSlot = InvSlots.get(crossbowIndex);
 
                                 ItemStack crossbowEnchantmentBook = new ItemStack(Material.ENCHANTED_BOOK);
-                                ItemMeta crossbowEnchantmentBookMeta = crossbowEnchantmentBook.getItemMeta();
+                                EnchantmentStorageMeta crossbowEnchantmentBookMeta = (EnchantmentStorageMeta) crossbowEnchantmentBook.getItemMeta();
                                 crossbowEnchantmentBookMeta.setDisplayName(crossbowEnchantments.getName());
                                 crossbowEnchantmentBookMeta.setLore(crossbowEnchantments.getLore());
+                                crossbowEnchantmentBookMeta.addStoredEnchant(crossbowEnchantments.getEnchantment(),1,false);
                                 crossbowEnchantmentBook.setItemMeta(crossbowEnchantmentBookMeta);
 
                                 eventInventory.setItem(invSlot,crossbowEnchantmentBook);
@@ -143,9 +149,10 @@ public class EnchantInvItemInListener implements Listener {
                                 int invSlot = InvSlots.get(elytraIndex);
 
                                 ItemStack elytraEnchantmentBook = new ItemStack(Material.ENCHANTED_BOOK);
-                                ItemMeta elytraEnchantmentBookMeta = elytraEnchantmentBook.getItemMeta();
+                                EnchantmentStorageMeta elytraEnchantmentBookMeta = (EnchantmentStorageMeta) elytraEnchantmentBook.getItemMeta();
                                 elytraEnchantmentBookMeta.setDisplayName(elytraEnchantments.getName());
                                 elytraEnchantmentBookMeta.setLore(elytraEnchantments.getLore());
+                                elytraEnchantmentBookMeta.addStoredEnchant(elytraEnchantments.getEnchantment(),1,false);
                                 elytraEnchantmentBook.setItemMeta(elytraEnchantmentBookMeta);
 
                                 eventInventory.setItem(invSlot,elytraEnchantmentBook);
@@ -161,9 +168,10 @@ public class EnchantInvItemInListener implements Listener {
                                 int invSlot = InvSlots.get(fishingRodIndex);
 
                                 ItemStack fishingRodEnchantmentBook = new ItemStack(Material.ENCHANTED_BOOK);
-                                ItemMeta fishingRodEnchantmentBookMeta = fishingRodEnchantmentBook.getItemMeta();
+                                EnchantmentStorageMeta fishingRodEnchantmentBookMeta = (EnchantmentStorageMeta) fishingRodEnchantmentBook.getItemMeta();
                                 fishingRodEnchantmentBookMeta.setDisplayName(fishingRodEnchantments.getName());
                                 fishingRodEnchantmentBookMeta.setLore(fishingRodEnchantments.getLore());
+                                fishingRodEnchantmentBookMeta.addStoredEnchant(fishingRodEnchantments.getEnchantment(),1,false);
                                 fishingRodEnchantmentBook.setItemMeta(fishingRodEnchantmentBookMeta);
 
                                 eventInventory.setItem(invSlot,fishingRodEnchantmentBook);
@@ -179,9 +187,10 @@ public class EnchantInvItemInListener implements Listener {
                                 int invSlot = InvSlots.get(helmetIndex);
 
                                 ItemStack helmetEnchantmentBook = new ItemStack(Material.ENCHANTED_BOOK);
-                                ItemMeta helmetEnchantmentBookMeta = helmetEnchantmentBook.getItemMeta();
+                                EnchantmentStorageMeta helmetEnchantmentBookMeta = (EnchantmentStorageMeta) helmetEnchantmentBook.getItemMeta();
                                 helmetEnchantmentBookMeta.setDisplayName(helmetEnchantments.getName());
                                 helmetEnchantmentBookMeta.setLore(helmetEnchantments.getLore());
+                                helmetEnchantmentBookMeta.addStoredEnchant(helmetEnchantments.getEnchantment(),1,false);
                                 helmetEnchantmentBook.setItemMeta(helmetEnchantmentBookMeta);
 
                                 eventInventory.setItem(invSlot,helmetEnchantmentBook);
@@ -197,9 +206,10 @@ public class EnchantInvItemInListener implements Listener {
                                 int invSlot = InvSlots.get(hoeIndex);
 
                                 ItemStack hoeEnchantmentBook = new ItemStack(Material.ENCHANTED_BOOK);
-                                ItemMeta hoeEnchantmentBookMeta = hoeEnchantmentBook.getItemMeta();
+                                EnchantmentStorageMeta hoeEnchantmentBookMeta = (EnchantmentStorageMeta) hoeEnchantmentBook.getItemMeta();
                                 hoeEnchantmentBookMeta.setDisplayName(hoeEnchantments.getName());
                                 hoeEnchantmentBookMeta.setLore(hoeEnchantments.getLore());
+                                hoeEnchantmentBookMeta.addStoredEnchant(hoeEnchantments.getEnchantment(),1,false);
                                 hoeEnchantmentBook.setItemMeta(hoeEnchantmentBookMeta);
 
                                 eventInventory.setItem(invSlot,hoeEnchantmentBook);
@@ -215,9 +225,10 @@ public class EnchantInvItemInListener implements Listener {
                                 int invSlot = InvSlots.get(leggingsIndex);
 
                                 ItemStack leggingsEnchantmentBook = new ItemStack(Material.ENCHANTED_BOOK);
-                                ItemMeta leggingsEnchantmentBookMeta = leggingsEnchantmentBook.getItemMeta();
+                                EnchantmentStorageMeta leggingsEnchantmentBookMeta = (EnchantmentStorageMeta) leggingsEnchantmentBook.getItemMeta();
                                 leggingsEnchantmentBookMeta.setDisplayName(leggingsEnchantments.getName());
                                 leggingsEnchantmentBookMeta.setLore(leggingsEnchantments.getLore());
+                                leggingsEnchantmentBookMeta.addStoredEnchant(leggingsEnchantments.getEnchantment(),1,false);
                                 leggingsEnchantmentBook.setItemMeta(leggingsEnchantmentBookMeta);
 
                                 eventInventory.setItem(invSlot,leggingsEnchantmentBook);
@@ -233,9 +244,10 @@ public class EnchantInvItemInListener implements Listener {
                                 int invSlot = InvSlots.get(pickaxeIndex);
 
                                 ItemStack pickaxeEnchantmentBook = new ItemStack(Material.ENCHANTED_BOOK);
-                                ItemMeta pickaxeEnchantmentBookMeta = pickaxeEnchantmentBook.getItemMeta();
+                                EnchantmentStorageMeta pickaxeEnchantmentBookMeta = (EnchantmentStorageMeta) pickaxeEnchantmentBook.getItemMeta();
                                 pickaxeEnchantmentBookMeta.setDisplayName(pickaxeEnchantments.getName());
                                 pickaxeEnchantmentBookMeta.setLore(pickaxeEnchantments.getLore());
+                                pickaxeEnchantmentBookMeta.addStoredEnchant(pickaxeEnchantments.getEnchantment(),1,false);
                                 pickaxeEnchantmentBook.setItemMeta(pickaxeEnchantmentBookMeta);
 
                                 eventInventory.setItem(invSlot,pickaxeEnchantmentBook);
@@ -251,9 +263,10 @@ public class EnchantInvItemInListener implements Listener {
                                 int invSlot = InvSlots.get(shovelIndex);
 
                                 ItemStack shovelEnchantmentBook = new ItemStack(Material.ENCHANTED_BOOK);
-                                ItemMeta shovelEnchantmentBookMeta = shovelEnchantmentBook.getItemMeta();
+                                EnchantmentStorageMeta shovelEnchantmentBookMeta = (EnchantmentStorageMeta) shovelEnchantmentBook.getItemMeta();
                                 shovelEnchantmentBookMeta.setDisplayName(shovelEnchantments.getName());
                                 shovelEnchantmentBookMeta.setLore(shovelEnchantments.getLore());
+                                shovelEnchantmentBookMeta.addStoredEnchant(shovelEnchantments.getEnchantment(),1,false);
                                 shovelEnchantmentBook.setItemMeta(shovelEnchantmentBookMeta);
 
                                 eventInventory.setItem(invSlot,shovelEnchantmentBook);
@@ -269,9 +282,10 @@ public class EnchantInvItemInListener implements Listener {
                                 int invSlot = InvSlots.get(swordIndex);
 
                                 ItemStack swordEnchantmentBook = new ItemStack(Material.ENCHANTED_BOOK);
-                                ItemMeta swordEnchantmentBookMeta = swordEnchantmentBook.getItemMeta();
+                                EnchantmentStorageMeta swordEnchantmentBookMeta = (EnchantmentStorageMeta) swordEnchantmentBook.getItemMeta();
                                 swordEnchantmentBookMeta.setDisplayName(swordEnchantments.getName());
                                 swordEnchantmentBookMeta.setLore(swordEnchantments.getLore());
+                                swordEnchantmentBookMeta.addStoredEnchant(swordEnchantments.getEnchantment(),1,false);
                                 swordEnchantmentBook.setItemMeta(swordEnchantmentBookMeta);
 
                                 eventInventory.setItem(invSlot,swordEnchantmentBook);
@@ -287,9 +301,10 @@ public class EnchantInvItemInListener implements Listener {
                                 int invSlot = InvSlots.get(tridentIndex);
 
                                 ItemStack tridentEnchantmentBook = new ItemStack(Material.ENCHANTED_BOOK);
-                                ItemMeta tridentEnchantmentBookMeta = tridentEnchantmentBook.getItemMeta();
+                                EnchantmentStorageMeta tridentEnchantmentBookMeta = (EnchantmentStorageMeta) tridentEnchantmentBook.getItemMeta();
                                 tridentEnchantmentBookMeta.setDisplayName(tridentEnchantments.getName());
                                 tridentEnchantmentBookMeta.setLore(tridentEnchantments.getLore());
+                                tridentEnchantmentBookMeta.addStoredEnchant(tridentEnchantments.getEnchantment(),1,false);
                                 tridentEnchantmentBook.setItemMeta(tridentEnchantmentBookMeta);
 
                                 eventInventory.setItem(invSlot,tridentEnchantmentBook);
@@ -305,9 +320,10 @@ public class EnchantInvItemInListener implements Listener {
                                 int invSlot = InvSlots.get(turtleHelmetIndex);
 
                                 ItemStack turtleShellEnchantmentBook = new ItemStack(Material.ENCHANTED_BOOK);
-                                ItemMeta turtleShellEnchantmentBookMeta = turtleShellEnchantmentBook.getItemMeta();
+                                EnchantmentStorageMeta turtleShellEnchantmentBookMeta = (EnchantmentStorageMeta) turtleShellEnchantmentBook.getItemMeta();
                                 turtleShellEnchantmentBookMeta.setDisplayName(turtleShellEnchantments.getName());
                                 turtleShellEnchantmentBookMeta.setLore(turtleShellEnchantments.getLore());
+                                turtleShellEnchantmentBookMeta.addStoredEnchant(turtleShellEnchantments.getEnchantment(),1,false);
                                 turtleShellEnchantmentBook.setItemMeta(turtleShellEnchantmentBookMeta);
 
                                 eventInventory.setItem(invSlot,turtleShellEnchantmentBook);
